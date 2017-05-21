@@ -11,17 +11,12 @@
       <p>I started from <a href="https://djangogirls.org"> this tutorial </a> for this site  </p>
     </div>
 
-    <div>
-      <p>published: 14.06.2014, 12:14</p>
-      <h2><a href="">My first post</a></h2>
-      <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    </div>
-
-    <div>
-      <p>published: 14.06.2014, 12:14</p>
-      <h2><a href="">My second post</a></h2>
-      <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-    </div>
-
+    {% for post in posts %}
+      <div>
+        <p>Published: {{post.published_date}}</p>
+        <p><h2>{{post.title}}</h2></p>
+        <p>{{post.text|linebreaksbr}}</p>
+      </div>
+    {% endfor %}
   </body>
 </html>
